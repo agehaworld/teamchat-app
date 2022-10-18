@@ -1,0 +1,28 @@
+<div class='chat-team-form'>
+  <h1>新規チーム</h1>
+  <%=form_with model: @team, local: true do |f|%>
+    <div class='chat-team-form__field'>
+      <div class='chat-team-form__field--left'>
+        <%= f.label :name, :チーム名, class: 'chat-team-form__label'%>
+      </div>
+      <div class='chat-team-form__field--right'>
+        <%= f.text_field :name, class: 'chat__team_name chat-team-form__input', placeholder: 'チーム名を入力してください'%>
+      </div>
+    </div>
+    <div class='chat-team-form__field'>
+    </div>
+    <div class='chat-team-form__field'>
+      <div class='chat-team-form__field--left'>
+        <label class='chat-team-form__label' for='chat_team_チームメンバー'>チームメンバー</label>
+      </div>
+      <div class='chat-team-form__field--right'>
+      </div>
+    </div>
+    <div class='chat-team-form__field'>
+      <div class='chat-team-form__field--left'></div>
+      <div class='chat-team-form__field--right'>
+        <%= f.submit class: 'chat-team-form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>
