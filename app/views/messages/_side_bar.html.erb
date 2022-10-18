@@ -3,39 +3,16 @@
     <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
   <div class="create-team">
-    <a href="#">Teamチャットを作成する</a>
+    <%= link_to "チーム選択する", new_team_path %>
   </div>
 </div>
 
 <div class="teams">
+ <% current_user.teams.each do |team| %>
 <div class="team">
     <div class="team-name">
-      <a href="#">教務</a>
+     <a href="#"><%= team.name %></a>
     </div>
   </div>
-  <div class="team">
-    <div class="team-name">
-      <a href="#">保育</a>
-    </div>
-  </div>
-  <div class="team">
-    <div class="team-name">
-      <a href="#">インバウンド</a>
-    </div>
-  </div>
-  <div class="team">
-    <div class="team-name">
-      <a href="#">広報</a>
-    </div>
-  </div>
-  <div class="team">
-    <div class="team-name">
-      <a href="#">企画</a>
-    </div>
-  </div>
-  <div class="team">
-    <div class="team-name">
-      <a href="#">総務</a>
-    </div>
-  </div>
+  <% end %>
 </div>
