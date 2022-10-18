@@ -13,13 +13,13 @@
     </div>
     <div class='chat-team-form__field'>
       <div class='chat-team-form__field--left'>
-        <label class='chat-team-form__label' for='chat_team_チーム'>チーム</label>
+        <label class='chat-team-form__label' for='chat_team_チーム'>チームメイト</label>
       </div>
       <div class='chat-team-form__field--right'>
       <select>
-           <option value="">チームを選択してください</option>
-          <% Team.all.each do |team| %>
-            <option><%= team.name %></option>
+           <option value="">チャットするユーザーを選択してください</option>
+          <% User.all.each do |user| %>
+            <option><%= user.name %></option>
           <% end %>
         </select>
       </div>
