@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @team = Team.find(params[:team_id])
+    @messages = @team.messages.includes(:user)
   end
 
   def create
@@ -10,6 +11,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to team_messages_path(@team)
     else
+      @messages = @team.messages.includes(:user)
       render :index
     end
   end
