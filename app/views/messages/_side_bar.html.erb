@@ -9,9 +9,9 @@
 
 <div class="teams">
  <% current_user.teams.each do |team| %>
-<div class="team">
+  <div class="team">
     <div class="team-name">
-     <a href="#"><%= team.name %></a>
+     <%= link_to team.name, team_messages_path(team) %>
     </div>
   </div>
   <% end %>
