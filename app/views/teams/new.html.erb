@@ -16,12 +16,13 @@
         <label class='chat-team-form__label' for='chat_team_チーム'>チームメイト</label>
       </div>
       <div class='chat-team-form__field--right'>
-      <select>
+      <select name="team[user_ids][]">
            <option value="">チャットするユーザーを選択してください</option>
-          <% User.all.each do |user| %>
-            <option><%= user.name %></option>
+           <% User.where.not(id: current_user.id).each do |user| %>
+             <option value=<%= user.id %>><%= user.name %></option>
           <% end %>
         </select>
+        <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
     <div class='chat-team-form__field'>
